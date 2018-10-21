@@ -1,22 +1,41 @@
-# Professional Syntax Theme for Atom
+# Just-right Latte Syntax Theme
 
-A minimal, professional theme designed to draw attention to the actual code while pushing the comments & "punctuation" into the background. This theme takes the approach of only accentuating things that really matter. I find the typical "explosion" of colors to be distracting and unhelpful.
+A minimal, subdued syntax theme -- brown/gold on a black background. It is designed to focus attention on the code while pushing the secondary elements like comments & punctuation into the background without being too busy.
 
-I take the approach of distinguishing the significant, high-level elements of a program. The reasoning applied is that reading and comprehension of the code is paramount, and this means colors should be used sparingly, and that the palette should consist of complimentary colors. You will not see hot-pink in this theme. Examples of elements which are differentiated are:
+This theme takes the approach that less (color) is more (effective), seeking to distinguish only the most significant, high-level elements of a program. The reasoning applied is that reading and comprehension of the code is paramount -- which means colors should be used sparingly and that the palette should consist of complimentary shades & colors.
 
-  - **`Code   :`** comments, operators, brackets, text, compiler/preprocess directives, literal values.
-  - **`CSS    :`** element selectors, relational-operators, class selectors, pseudo-elements, keywords, literal values.
-  - **`Markup :`** elements, attributes, identity attributes (name, id, and class), values, brackets, text.
+Examples of elements which are differentiated are:
 
- Text elements (in code, that would be things like keywords, identifiers, etc), minor differentiation is done with intensity, such that the main body is one color chosen for good contrast and readability, and other things are made slightly darker or lighter as appropriate.
+  - **Code:**   primary text, literal values, comments, operators/brackets, compiler/preprocessor directives.
+  - **CSS:**    tag selectors, class selectors, id selectors, pseudo-elements, keywords, literal values.
+  - **Markup:** tags, attributes & values, content text.
 
+The primary coloring of the theme is governed by just a few color settings in `syntax-variables.less`. I've chosen a soft, warm color, but a cool blue base works really well too. If you fork this theme just to alter the basic palette I suggest you also name your theme `justright-xxx-syntax` -- the intention is that the "justright" refers to the amount of coloring (or lack thereof) and it would be helpful to group themes based on this framework together.
+
+````
+@syntax-text-color                      : lighten(@brown,33%);                                                          // The primary pallette color (default text color).
+@syntax-text-color-high                 : lighten(@syntax-text-color,15%);                                              // non-standard
+@syntax-text-color-low1                 : darken( @syntax-text-color,17%);                                              // non-standard
+@syntax-text-color-low2                 : darken( @syntax-text-color,33%);                                              // non-standard
+@syntax-background-color                : @black;
+````
+
+When I am confident that the theme is stable, it will be updated to 1.0.0 and published to Atom's repository.
 
 ## Screenshots
 
-![Java Screenshot](???)
+#### HTML
 
-![JavaScript Screenshot](???)
+![HTML Screenshot](https://raw.githubusercontent.com/lawrence-dol/justright-latte-syntax/develop/img/AtomTheme-HTML.png)
 
-![CSS Screenshot](???)
+#### CSS
 
-![HTML Screenshot](???)
+![CSS Screenshot](https://raw.githubusercontent.com/lawrence-dol/justright-latte-syntax/develop/img/AtomTheme-CSS.png)
+
+#### JavaScript
+
+![JavaScript Screenshot](https://raw.githubusercontent.com/lawrence-dol/justright-latte-syntax/develop/img/AtomTheme-JS.png)
+
+#### Java
+
+![Java Screenshot](https://raw.githubusercontent.com/lawrence-dol/justright-latte-syntax/develop/img/AtomTheme-Java.png)

@@ -1,15 +1,12 @@
 {
-"name"                                   : "lowcolor-professional-syntax",
-"theme"                                  : "syntax",
-"version"                                : "0.0.0",
-"description"                            : "A professional syntax theme for Atom which uses color sparingly.",
-"keywords": [
-    "syntax",
-    "theme"
-    ],
-"repository"                             : "https://github.com/atom/lowcolor-professional-syntax",
-"license"                                : "MIT",
+"name"                                  : "justright-latte-syntax",
+"theme"                                 : "syntax",
+"version"                               : "0.1.0",
+"description"                           : "A dark brown/gold on black syntax theme for Atom which uses color sparingly.",
+"keywords"                              : [ "autumn", "dark", "syntax", "theme" ],
+"repository"                            : "https://github.com/lawrence-dol/justright-latte-syntax",
+"license"                               : "MIT",
 "engines": {
-    "atom"                               : ">=1.0.0 <2.0.0"
+    "atom"                              : ">=1.0.0"
     }
 }
