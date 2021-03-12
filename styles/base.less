@@ -54,6 +54,10 @@ atom-text-editor.editor {
         border-left                     : 2px solid @syntax-cursor-color;
         }
 
+    .highlight {
+        position                        : relative;
+        }
+
     .highlight,
     .highlight .region {
         background                      : 0;
@@ -63,38 +67,27 @@ atom-text-editor.editor {
         text-decoration                 : none;
         }
 
-    .highlight.bracket-matcher {
-        position                        : relative;
-        .region {
-            background                  : transparent;
-            color                       : white;
-            .highlight-outline-mixin()
-            }
+    .highlight.bracket-matcher .region {
+        background                  : transparent;
+        color                       : white;
+        .highlight-outline-mixin();
         }
 
-    .highlight.find-result {
-        position                        : relative;
-        .region {
-            background                  : @syntax-find-result-bg-color;
-            color                       : @syntax-find-result-fg-color;
-            }
+    .highlight.find-result .region {
+        background                  : @syntax-find-result-bg-color;
+        color                       : @syntax-find-result-fg-color;
         }
 
-    .highlight.current-result {
-        position                        : relative;
-        .region {
-            background                  : @syntax-find-result-bg-color;
-            color                       : @syntax-find-result-fg-color;
-            .highlight-outline-mixin()
-            }
+    .highlight.current-result .region {
+        background                  : @syntax-find-current-bg-color;
+        color                       : @syntax-find-current-fg-color;
+        .highlight-outline-mixin();
+        animation                   : blinking 1000ms infinite;
         }
 
-    .highlight.selection {
-        position                        : relative;
-        .region {
-            background                  : @syntax-selection-bg-color;
-            color                       : @syntax-selection-fg-color;
-            }
+    .highlight.selection .region {
+        background                  : @syntax-selection-bg-color;
+        color                       : @syntax-selection-fg-color;
         }
 
     .highlight.spell-check-misspelling {
@@ -115,10 +108,16 @@ atom-text-editor.editor {
         content                 : ' ';
         width                   : auto;
         height                  : 4px;
-        border                  : solid 1px @syntax-highlight-fg-color;
+        border                  : solid 1px @syntax-highlight-fg-color !important;
         }
-    &:before                    { top   : 0; border-bottom: 0 }
-    &:after                     { bottom: 0; border-top:    0 }
+    &:before                    { top   : 0; border-bottom: 0 !important; }
+    &:after                     { bottom: 0; border-top:    0 !important; }
+    }
+
+@keyframes blinking {
+    50% {
+        background-color        : @syntax-background-color;
+        }
     }
 
 // EDITOR IS FOCUSED
